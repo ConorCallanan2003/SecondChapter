@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>E4D44D9A-8F8E-4592-9625-BE4B6E3D49AF</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>E4D44D9A-8F8E-4592-9625-BE4B6E3D49AF.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Runner project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Runner</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building workspace Runner with scheme Runner and configuration Profile</string>
+			<key>timeStartedRecording</key>
+			<real>699194381.44141698</real>
+			<key>timeStoppedRecording</key>
+			<real>699194405.91346395</real>
+			<key>title</key>
+			<string>Building workspace Runner with scheme Runner and configuration Profile</string>
+			<key>uniqueIdentifier</key>
+			<string>E4D44D9A-8F8E-4592-9625-BE4B6E3D49AF</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

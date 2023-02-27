@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "8f80e7abba4d3ec57dc876c68d069d67064fdce2a4105b53fe6219fc519b1146"
+build_start_time: [1677501663, 435388088]
+build_end_time: [1677501665, 177833080]
+inputs:
+  "/Users/conor/Development/ReplayBooks/ReplayBooksV2/replay_books/macos/Flutter/GeneratedPluginRegistrant.swift": [1677501640, 512588977]
+  "/Users/conor/Development/ReplayBooks/ReplayBooksV2/replay_books/macos/Runner/AppDelegate.swift": [1675961070, 0]
+  "/Users/conor/Development/ReplayBooks/ReplayBooksV2/replay_books/macos/Runner/MainFlutterWindow.swift": [1675961070, 0]
