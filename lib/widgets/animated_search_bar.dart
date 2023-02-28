@@ -18,7 +18,7 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar>
   void initState() {
     super.initState();
     controller = AnimationController(
-        duration: const Duration(milliseconds: 300), vsync: this);
+        duration: const Duration(milliseconds: 0), vsync: this);
     animation = CurvedAnimation(parent: controller, curve: Curves.easeIn)
       ..addListener(() {
         setState(() {});

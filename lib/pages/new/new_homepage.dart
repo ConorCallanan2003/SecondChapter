@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:replay_books/pages/new/sell_page.dart';
+import 'package:replay_books/util/router.dart';
 import 'package:replay_books/widgets/animated_search_bar.dart';
 
 import '../../util/get_book_data.dart';
@@ -56,7 +58,7 @@ class NewHomePageState extends State<NewHomePage> {
                           return ListView();
                         }
                         return GridView.builder(
-                            padding: EdgeInsets.only(top: height * 0.12),
+                            padding: EdgeInsets.only(top: height * 0.18),
                             gridDelegate:
                                 const SliverGridDelegateWithFixedCrossAxisCount(
                               childAspectRatio: (1 / 1.25),
@@ -69,12 +71,17 @@ class NewHomePageState extends State<NewHomePage> {
                             });
                       }),
               Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                SizedBox(
+                  height: 80,
+                  width: width,
+                ),
                 AnimatedSearchBar(handleSearch, toggleCompleted),
                 !completed.value
                     ? Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: TextButton(
-                            onPressed: null,
+                            onPressed: () => Navigator.of(context)
+                                .push(MyRouter.createRoute(SellPage())),
                             child: Container(
                               height: 60,
                               width: width * .5,
@@ -88,7 +95,7 @@ class NewHomePageState extends State<NewHomePage> {
                                       Radius.circular(35)),
                                   border: Border.all(
                                       color: Colors.black, width: .1)),
-                              child: Center(
+                              child: const Center(
                                 child: Text(
                                   'Sell',
                                   style: TextStyle(
@@ -102,7 +109,11 @@ class NewHomePageState extends State<NewHomePage> {
                     : const SizedBox(
                         height: 0,
                         width: 0,
-                      )
+                      ),
+                SizedBox(
+                  height: completed.value ? 0 : 100,
+                  width: width,
+                )
               ])
             ]));
       },
