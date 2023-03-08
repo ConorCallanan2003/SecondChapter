@@ -13,9 +13,28 @@ class Book {
   String rating;
   String image;
 
-  static Future<List<Book>> generateBooks(String filterTerm) async {
-    File file = File('assets/books__.csv');
+  static Future<Book> retrieveBookByNum(String isbn) async {
+    final data = await rootBundle.loadString("assets/books__.csv");
 
+    List<String> stringBooks = data.split("\n");
+
+    for (int i = 1; i < stringBooks.length; i++) {
+      List<String> book = stringBooks[i].split("{");
+
+      // print(stringBooks[1]);
+      if (book.length == 6) {
+        Book newBook = Book(book[0].trim(), book[1].trim(), book[2].trim(),
+            book[3].trim(), book[4].trim(), book[5].trim());
+
+        if (newBook.isbn == isbn) {
+          return (newBook);
+        }
+      }
+    }
+    return Book('', '', '', '', '', '');
+  }
+
+  static Future<List<Book>> generateBooks(String filterTerm) async {
     final data = await rootBundle.loadString("assets/books__.csv");
 
     List<Book> books = [];

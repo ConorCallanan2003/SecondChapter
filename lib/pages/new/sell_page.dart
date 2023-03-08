@@ -20,7 +20,7 @@ class SellPage extends StatelessWidget {
       body: GestureDetector(
         onTap: () => Navigator.pop(context),
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 100),
+          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 100),
           color: Colors.blue,
           height: height,
           width: width,

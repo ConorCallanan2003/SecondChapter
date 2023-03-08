@@ -1,4 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:replay_books/pages/item_details_page.dart';
 import 'package:replay_books/pages/new/sell_page.dart';
 import 'package:replay_books/util/router.dart';
 import 'package:replay_books/widgets/animated_search_bar.dart';
@@ -15,6 +19,18 @@ class NewHomePage extends StatefulWidget {
 
 class NewHomePageState extends State<NewHomePage> {
   Future<List<Book>> books = Book.generateBooks('');
+
+  ValueNotifier<String> barcode = ValueNotifier('');
+
+  void handleScan() async {
+    String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
+        'blue', 'Cancel', false, ScanMode.BARCODE);
+    barcode.value = barcodeScanRes;
+
+    Book book = await Book.retrieveBookByNum(barcodeScanRes);
+
+    Navigator.of(context).push(MyRouter.createRoute(ItemDetails(book)));
+  }
 
   TextEditingController textController = TextEditingController();
 
@@ -44,6 +60,7 @@ class NewHomePageState extends State<NewHomePage> {
       valueListenable: completed,
       builder: (context, value, child) {
         return Scaffold(
+            backgroundColor: Colors.white,
             resizeToAvoidBottomInset: false,
             body: Stack(children: [
               !value
@@ -71,17 +88,21 @@ class NewHomePageState extends State<NewHomePage> {
                             });
                       }),
               Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                SizedBox(
-                  height: 80,
-                  width: width,
-                ),
+                // Container(
+                //   height: 350,
+                //   width: 450,
+                //   decoration: const BoxDecoration(
+                //       image: DecorationImage(
+                //           scale: .25,
+                //           image: AssetImage('assets/images/logo.png'))),
+                // ),
+                SizedBox(height: 80, width: width),
                 AnimatedSearchBar(handleSearch, toggleCompleted),
                 !completed.value
                     ? Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: TextButton(
-                            onPressed: () => Navigator.of(context)
-                                .push(MyRouter.createRoute(SellPage())),
+                            onPressed: () => handleScan(),
                             child: Container(
                               height: 60,
                               width: width * .5,

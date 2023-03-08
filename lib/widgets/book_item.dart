@@ -26,9 +26,11 @@ class BookItem extends StatelessWidget {
                   image: DecorationImage(
                       image: NetworkImage(book.image), fit: BoxFit.fitWidth),
                   borderRadius: const BorderRadius.all(Radius.circular(15)),
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
-                        color: Colors.black54, blurRadius: 8, spreadRadius: 4)
+                        color: Colors.blueAccent.withOpacity(0.2),
+                        blurRadius: 8,
+                        spreadRadius: 8)
                   ]),
             ),
             Container(

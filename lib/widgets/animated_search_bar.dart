@@ -18,7 +18,7 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar>
   void initState() {
     super.initState();
     controller = AnimationController(
-        duration: const Duration(milliseconds: 0), vsync: this);
+        duration: const Duration(milliseconds: 120), vsync: this);
     animation = CurvedAnimation(parent: controller, curve: Curves.easeIn)
       ..addListener(() {
         setState(() {});
@@ -65,24 +65,27 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar>
                       padding: const EdgeInsets.symmetric(
                           horizontal: 25, vertical: 6),
                       child: TextField(
-                        cursorColor: Colors.black12,
+                        cursorColor: Colors.black,
                         autofocus: true,
                         onChanged: (value) => widget.handleSearch(value),
                         decoration: const InputDecoration.collapsed(
                             hintText: 'Search',
                             hintStyle:
-                                TextStyle(fontSize: 24, color: Colors.black38)),
-                        style: const TextStyle(
-                            fontSize: 24, color: Colors.black87),
+                                TextStyle(fontSize: 24, color: Colors.black)),
+                        style:
+                            const TextStyle(fontSize: 24, color: Colors.black),
                       ),
                     )
                   : const Padding(
-                      padding: EdgeInsets.only(left: 60),
+                      padding: EdgeInsets.only(left: 50),
                       child: Align(
                         alignment: AlignmentDirectional.centerStart,
                         child: Text(
                           'Search',
-                          style: TextStyle(fontSize: 24, color: Colors.black38),
+                          style: TextStyle(
+                              fontSize: 28,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600),
                         ),
                       ),
                     ),

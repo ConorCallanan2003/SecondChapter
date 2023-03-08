@@ -13,12 +13,25 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // ColorScheme myScheme = const ColorScheme(
+  //     brightness: Brightness.light,
+  //     primary: Colors.cyan,
+  //     onPrimary: Colors.cyanAccent,
+  //     secondary: Colors.white,
+  //     onSecondary: Colors.white,
+  //     error: Colors.red,
+  //     onError: Colors.red,
+  //     background: Colors.black,
+  //     onBackground: Colors.white,
+  //     surface: Colors.black,
+  //     onSurface: Colors.red);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
+          // colorScheme: myScheme,
           primarySwatch: Colors.cyan,
         ),
         home: const NewHomePage());
